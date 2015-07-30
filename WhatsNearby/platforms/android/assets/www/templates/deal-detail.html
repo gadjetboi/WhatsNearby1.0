@@ -1,0 +1,11 @@
+﻿<ion-view view-title="Deal Detail">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="{{ dealDetail.largeImageUrl }}">
+                <h2>{{ dealDetail.title }}</h2>
+                <p>{{ dealDetail.options[0].price.currencyCode }} {{ dealDetail.options[0].price.amount }}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+/* Empty. Add your own CSS if you like */
+
+/************************* Common *************************/
+.text-align-center {
+    text-align: center;
+}
+
+/************************* PAGES *************************/
+/*Intro*/
+.intro-logo {
+   text-align: center;
+}
+.intro-logo > img {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+
+/*Dashboard*/
+.dashboard-icons-panel {
+    margin: 10px;
+}
+
+.dashboard-icon {
+    width: 80px;
+    height: 80px;
+}

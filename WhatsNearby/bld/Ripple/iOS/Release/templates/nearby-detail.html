@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Nearby Detail">
+    <ion-content>
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="{{ businessDetail.snippet_image_url }}">
+                <h2>{{ businessDetail.name }}</h2>
+                <p>{{ businessDetail.location.cross_streets }}</p>
+                <p>{{ businessDetail.location.address[0] }} {{ businessDetail.location.city }}</p>
+                <button class="button button-positive" ng-click="getDirection()">
+                    Get Direction
+                </button>
+            </div>
+
+           
+
+            <div class="item item-body">
+                <div><img src="{{ businessDetail.rating_img_url }}" /></div>
+                <img class="full-image" src="{{ businessDetail.image_url }}">
+
+                <div id="googleMap"></div>
+            </div>
+             
+        </div>
+       
+    </ion-content>
+   
+</ion-view>
