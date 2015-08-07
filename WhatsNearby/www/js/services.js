@@ -13,7 +13,7 @@ angular.module('starter.services', [])
             var method = 'GET';
             var url = 'https://partner-api.groupon.com/deals.json';
             var params = {
-                tsToken: 'US_AFF_0_204362_212556_0',
+                tsToken: '',
                 lat: lat,
                 lng: lng,
                 limit: 50
@@ -48,16 +48,16 @@ angular.module('starter.services', [])
             var params = {
                 //callback: 'angular.callbacks._0',
                 ll: lat + ", " + lng,
-                oauth_consumer_key: 'JCs1r-qqSQnB0tF2NTxUPw', //Consumer Key
-                oauth_token: 'IONf9lLQuAsWQFD_1-YLBg6u7zJ6LBl4', //Token
+                oauth_consumer_key: '', //Consumer Key
+                oauth_token: '', //Token
                 oauth_signature_method: "HMAC-SHA1",
                 oauth_timestamp: new Date().getTime(),
                 oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
                 term: term
             };
 
-            var consumerSecret = '4IhnBf44M8M04XAUcLtvuhKN9xQ'; //Consumer Secret
-            var tokenSecret = 'h80GpMjekndS2Q-20arPjl0logM'; //Token Secret
+            var consumerSecret = ''; //Consumer Secret
+            var tokenSecret = ''; //Token Secret
             var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false });
             params['oauth_signature'] = signature;
 
