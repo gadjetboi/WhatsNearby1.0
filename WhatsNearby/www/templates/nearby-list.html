@@ -5,7 +5,7 @@
         </ion-refresher>
 
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" collection-repeat="data in dataResult.businesses" type="item-text-wrap" href="#/tab/nearby-detail/{{ data.id }}">
+            <ion-item class="item-remove-animate item-thumbnail-left" collection-repeat="data in dataResult.businesses" type="item-text-wrap" href="#/tab/nearby-detail/{{ data.id }}">
                 <img ng-src="{{ data.image_url }}">
                 <h2>{{ data.name }} <br/></h2>
                 <img src="{{ data.rating_img_url }}" />

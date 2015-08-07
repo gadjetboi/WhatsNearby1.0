@@ -1,21 +1,33 @@
 angular.module('starter.controllers', [])
 
-.controller('IntroCtrl', function ($scope, $location, Geolocation, $state) {
+.controller('IntroCtrl', function ($scope, $location, $ionicLoading, Geolocation) {
 
     $scope.getCurrentPosition = function () {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
 
-        Geolocation.getCurrentPosition();
+        Geolocation.getCurrentPosition(function (position) {
+            Geolocation.setPosition(position);
 
-        $location.path('tab/dashboard');
+            $ionicLoading.hide();
+
+            $location.path('tab/dashboard');
+        });
     }
 })
 
-.controller('DashCtrl', function ($scope, $state, $location, YelpApi, Geolocation) {
+.controller('DashCtrl', function ($scope, $state, $location, $ionicLoading, YelpApi, Geolocation) {
 
     $scope.loadList = function (term) {
 
         //if (!YelpApi.getResult())
         //{
+
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+
         var currPosition = Geolocation.getPosition();
 
         var lat = currPosition.coords.latitude;
@@ -29,6 +41,8 @@ angular.module('starter.controllers', [])
 
             YelpApi.setResult(data);
 
+            $ionicLoading.hide();
+
             $location.path('tab/nearby-list');
 
         });
@@ -39,7 +53,11 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('DealCtrl', function ($scope, Geolocation, GrouponApi) {
+.controller('DealCtrl', function ($scope, $ionicLoading, Geolocation, GrouponApi) {
+
+    $ionicLoading.show({
+        template: 'Loading...'
+    });
 
     var currPosition = Geolocation.getPosition();
 
@@ -55,6 +73,8 @@ angular.module('starter.controllers', [])
         GrouponApi.setResult(data);
 
         $scope.deals = data.deals;
+
+        $ionicLoading.hide();
     })
 
     $scope.doRefresh = function () {

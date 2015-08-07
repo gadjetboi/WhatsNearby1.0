@@ -1,15 +1,29 @@
 ﻿<ion-view view-title="Find Deals">
-    <ion-content>
+    <ion-content class="deal-list">
         <ion-refresher pulling-text="Pull to refresh..."
                        on-refresh="doRefresh()">
         </ion-refresher>
-
-        <ion-spinner icon="ios" ng-show="!deals"></ion-spinner>
-        <a class="item item-thumbnail-left" collection-repeat="deal in deals" href="#/tab/deal-detail/{{ deal.id }}">
-            <img src="{{ deal.mediumImageUrl }}">
-            <h2>{{ deal.title }}</h2>
-            <p>{{ deal.options[0].discount.currencyCode }} {{ deal.options[0].discount.amount }}</p>
-            <p><strike>{{ deal.options[0].price.currencyCode }} {{ deal.options[0].price.amount }}<strike></p>
-        </a>
+       
+        <div class="item" collection-repeat="deal in deals">
+            <div class="img-top">
+                <img src="{{ deal.grid4ImageUrl }}">
+            </div>
+            <div class="deal-content">
+                <h2>{{ deal.title }}</h2>
+                <br />
+                <div class="row">
+                    <div class="col col-30">
+                        <p><strike>{{ deal.options[0].value.formattedAmount }}</strike>&nbsp;<span>{{ deal.options[0].price.formattedAmount }}</span></p>
+                    </div>
+                    <div class="col col-60">
+                        <div class="text-align-right">
+                            <a class="button button-small button-balanced" href="#/tab/deal-detail/{{ deal.id }}">
+                                VIEW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

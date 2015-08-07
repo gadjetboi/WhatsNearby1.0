@@ -1,11 +1,73 @@
 ﻿<ion-view view-title="Deal Detail">
-    <ion-content>
-        <div class="list card">
-            <div class="item item-avatar">
-                <img src="{{ dealDetail.largeImageUrl }}">
-                <h2>{{ dealDetail.title }}</h2>
-                <p>{{ dealDetail.options[0].price.currencyCode }} {{ dealDetail.options[0].price.amount }}</p>
+    <ion-content class="padding deal-detail">
+        <ion-slide-box>
+            <ion-slide>
+                <div class="box blue"><img src="{{ dealDetail.grid4ImageUrl }}"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box yellow"><img src="{{ dealDetail.grid4ImageUrl }}"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box pink"><img src="{{ dealDetail.grid4ImageUrl }}"></div>
+            </ion-slide>
+        </ion-slide-box>
+        <h4>{{ dealDetail.title }}</h4>
+        <br />
+        <div class="row">
+            <div class="col col-50">
+                <div class="detail-amount text-align-center">
+                    <p><strike>{{ dealDetail.options[0].value.formattedAmount }}</strike>
+                    <br />
+                    <span>{{ dealDetail.options[0].price.formattedAmount }}</span></p>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="text-align-center">
+                    <a class="button button-small button-balanced" href="{{ dealDetail.options[0].buyUrl }}">
+                        BUY!
+                    </a>
+                </div>
             </div>
         </div>
+        <br />
+        <div class="row discount-row">
+                <div class="col col-30">{{ dealDetail.options[0].value.formattedAmount }}<br /><span>value</span></div>
+                <div class="col col-30">{{ dealDetail.options[0].discountPercent }}%<br /><span>discount</span></div>
+                <div class="col col-30">{{ dealDetail.options[0].discount.formattedAmount }}<br /><span>you save</span></div>
+        </div>
+        <br />
+        <div class="card" ng-show="dealDetail.highlightsHtml">
+            <div class="item item-divider">
+               Highlights
+            </div>
+            <div class="item item-text-wrap">
+                <div ng-bind-html="dealDetail.highlightsHtml"></div>
+            </div>
+        </div>
+        <div class="card" ng-show="dealDetail.shortAnnouncementTitle">
+            <div class="item item-divider">
+                {{ dealDetail.shortAnnouncementTitle }}
+            </div>
+            <div class="item item-text-wrap">
+                Map here...
+            </div>
+        </div>
+        <div class="card" ng-show="dealDetail.pitchHtml">
+            <div class="item item-divider">
+                More About This Deal
+            </div>
+            <div class="item item-text-wrap">
+                <div ng-bind-html="dealDetail.pitchHtml"></div>
+            </div>
+        </div>
+        <div class="card" ng-show="dealDetail.finePrint">
+            <div class="item item-divider">
+                The Fine Print
+            </div>
+            <div class="item item-text-wrap">
+                <div ng-bind-html="dealDetail.finePrint"></div>
+            </div>
+        </div>
+        
     </ion-content>
 </ion-view>

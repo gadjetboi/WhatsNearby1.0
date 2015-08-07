@@ -85,20 +85,17 @@ angular.module('starter.services', [])
         return _position;
     }
 
-    function onSuccess(position) {
-        setPosition(position);
-    };
-
     function onError(error) {
         alert('code: ' + error.code + '\n' +
               'message: ' + error.message + '\n');
     };
 
     return {
-        getCurrentPosition: function () {
-            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        getCurrentPosition: function (onSuccess) {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, { maximumAge: 3000, enableHighAccuracy: true });
         },
-        getPosition: getPosition
+        getPosition: getPosition,
+        setPosition: setPosition
     }
 })
 
