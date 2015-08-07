@@ -93,4 +93,5 @@
   <vs:plugin name="org.apache.cordova.geolocation" version="0.3.12" />
   <preference name="target-device" value="universal" />
   <vs:plugin name="org.apache.cordova.splashscreen" version="1.0.0" />
+  <vs:plugin name="org.apache.cordova.inappbrowser" version="0.6.0" />
 </widget>

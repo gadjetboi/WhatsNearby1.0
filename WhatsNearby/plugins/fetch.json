@@ -10,5 +10,11 @@
             "type": "registry",
             "id": "org.apache.cordova.splashscreen"
         }
+    },
+    "org.apache.cordova.inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.inappbrowser"
+        }
     }
 }

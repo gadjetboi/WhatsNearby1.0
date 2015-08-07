@@ -47,14 +47,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
            views: { 'location-view': { templateUrl: "templates/nearby-detail.html", controller: 'NearbyDetailCtrl' } }
        })
 
-        //.state('tabs.directionMap', {
-        //    url: '/direction-map',
-        //    params: { myParam: null },
-        //    views: { 'location-view': { templateUrl: "templates/direction-map.html", controller: 'DirectionMapCtrl' } }
-        //})
- 
-        .state('direction-map', { url: '/direction-map', params: { myParam: null }, templateUrl: 'templates/direction-map.html', controller: 'DirectionMapCtrl' })
-
         /* Deal Tab Pages */
         .state('tabs.dealList', {
             url: "/deal-list",

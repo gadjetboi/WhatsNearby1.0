@@ -143,30 +143,22 @@ angular.module('starter.controllers', [])
     var lng_position = $scope.businessDetail.location.coordinate.longitude;
 
     Map.displayGoogleMap(lat_position, lng_position);
-
+    
     $scope.getDirection = function () {
 
         var currPosition = Geolocation.getPosition();
 
-        var data = YelpApi.getResult() || null;
-
         var directionObj = {
-            'lat_from': currPosition.coords.latitude,
-            'lng_from': currPosition.coords.longitude,
-            'lat_to': $scope.businessDetail.location.coordinate.latitude,
-            'lng_to': $scope.businessDetail.location.coordinate.longitude
+            'fromLat': currPosition.coords.latitude,
+            'fromLng': currPosition.coords.longitude,
+            'toLat': $scope.businessDetail.location.coordinate.latitude,
+            'toLng': $scope.businessDetail.location.coordinate.longitude
         }
 
-        $state.go('direction-map', { myParam: directionObj });
-        //$state.go('tab.direction-map', { myParam: directionObj });
-        //$location.path('tab/direction-map/' + directionObj);
-     
+        var googleMapDirectionUrl = "https://www.google.com/maps/dir/" + directionObj.fromLat + "," + directionObj.fromLng + "/" + directionObj.toLat + "," + directionObj.toLng;
+
+        window.open(googleMapDirectionUrl, '_blank', 'location=yes');
     }
-})
-
-.controller('DirectionMapCtrl', function ($scope, $stateParams, Map) {
-
-    Map.displayDirection($stateParams.myParam);
 })
 
 .controller('ContactCtrl', function ($scope) {

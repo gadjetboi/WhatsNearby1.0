@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('GrouponApi', function ($http) {
- 
+
     return {
         setResult: function (data) {
             result = data;
@@ -130,11 +130,11 @@ angular.module('starter.services', [])
     };
 
     var displayDirection = function (directionObj) {
-       
+
         var directionsDisplay;
         var directionsService = new google.maps.DirectionsService();
         var map;
-       
+
         directionsDisplay = new google.maps.DirectionsRenderer();
         var position = new google.maps.LatLng(directionObj.lat_from, directionObj.lng_from);
         var mapOptions = {
