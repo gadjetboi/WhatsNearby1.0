@@ -1,29 +1,44 @@
 ﻿<ion-view view-title="Find Deals">
-    <ion-content class="deal-list">
-        <ion-refresher pulling-text="Pull to refresh..."
-                       on-refresh="doRefresh()">
-        </ion-refresher>
-       
-        <div class="item" collection-repeat="deal in deals">
-            <div class="img-top">
-                <img src="{{ deal.grid4ImageUrl }}">
+    
+    <div class="bar bar-subheader deal-menu">
+        <div class="row">
+            <div class="col col-20 text-align-center">All</div>
+            <div class="col col-20 text-align-center">Nearby</div>
+            <div class="col col-50">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search">
+                </label>
             </div>
-            <div class="deal-content">
-                <h2>{{ deal.title }}</h2>
-                <br />
-                <div class="row">
-                    <div class="col col-30">
-                        <p><strike>{{ deal.options[0].value.formattedAmount }}</strike>&nbsp;<span>{{ deal.options[0].price.formattedAmount }}</span></p>
-                    </div>
-                    <div class="col col-60">
-                        <div class="text-align-right">
-                            <a class="button button-small button-balanced" href="#/tab/deal-detail/{{ deal.id }}">
-                                VIEW
-                            </a>
+        </div>
+    </div>
+   
+  
+    <ion-content class="deal-list">
+            <ion-refresher pulling-text="Pull to refresh..."
+                           on-refresh="doRefresh()">
+            </ion-refresher>
+
+            <div class="item" collection-repeat="deal in deals">
+                <div class="img-top">
+                    <img src="{{ deal.grid4ImageUrl }}">
+                </div>
+                <div class="deal-content">
+                    <h2>{{ deal.title }}</h2>
+                    <br />
+                    <div class="row">
+                        <div class="col col-30">
+                            <p><strike>{{ deal.options[0].value.formattedAmount }}</strike>&nbsp;<span>{{ deal.options[0].price.formattedAmount }}</span></p>
+                        </div>
+                        <div class="col col-60">
+                            <div class="text-align-right">
+                                <a class="button button-small button-balanced" href="#/tab/deal-detail/{{ deal.id }}">
+                                    VIEW
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </ion-content>
+        </ion-content>
 </ion-view>

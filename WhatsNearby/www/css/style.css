@@ -15,9 +15,9 @@
    text-align: center;
 }
 .intro-logo > img {
-    width: 150px;
-    height: 150px;
-    margin: 10px;
+    width: 270px;
+    height: 124px;
+    margin: 15px;
 }
 
 /*Dashboard*/
@@ -94,6 +94,20 @@
     white-space: normal !important;
 }
 
+.deal-menu {
+    padding: 0px;
+}
+
+.deal-menu .col {
+    padding: 0px;
+}
+
+.deal-menu .col:nth-child(1), .col:nth-child(2) {
+    color: #90C652;
+    font-weight: 700;
+    padding-top: 5px;
+} 
+
 /*Buttons*/
 .deal-list .button-balanced {
     background-image: linear-gradient(to bottom,#90C652 0,#61923b 100%);
@@ -104,4 +118,9 @@
     width: 60%;
     border-radius: 5px;
     background-image: linear-gradient(to bottom,#90C652 0,#61923b 100%) !important;
+}
+
+/*Input Types*/
+.deal-menu .item-input {
+    padding: 0px 0px 0px 10px;
 }

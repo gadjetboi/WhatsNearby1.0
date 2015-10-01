@@ -102,6 +102,12 @@ angular.module('starter.controllers', [])
     }
    
     $scope.dealDetail = selectedData;
+
+    $scope.buyInGroupon = function () {
+
+        window.open($scope.dealDetail.options[0].buyUrl, '_blank', 'location=yes,clearcache=yes,clearsessioncache=yes');
+
+    }
 })
 
 .controller('NearbyListCtrl', function ($scope, $stateParams, YelpApi) {
@@ -157,7 +163,7 @@ angular.module('starter.controllers', [])
 
         var googleMapDirectionUrl = "https://www.google.com/maps/dir/" + directionObj.fromLat + "," + directionObj.fromLng + "/" + directionObj.toLat + "," + directionObj.toLng;
 
-        window.open(googleMapDirectionUrl, '_blank', 'location=yes');
+        window.open(googleMapDirectionUrl, '_blank', 'location=yes,clearcache=yes,clearsessioncache=yes');
     }
 })
 
