@@ -108,6 +108,24 @@
     padding-top: 5px;
 } 
 
+.nearby-menu {
+    padding: 0px;
+}
+
+.nearby-menu .col {
+    padding: 0px;
+}
+
+.nearby-menu .col:nth-child(1), .col:nth-child(2) {
+    color: #90C652;
+    font-weight: 700;
+    padding-top: 5px;
+}
+
+.nearby-list .list {
+    margin-top: 40px;
+}
+
 /*Buttons*/
 .deal-list .button-balanced {
     background-image: linear-gradient(to bottom,#90C652 0,#61923b 100%);
@@ -122,5 +140,9 @@
 
 /*Input Types*/
 .deal-menu .item-input {
+    padding: 0px 0px 0px 10px;
+}
+
+.nearby-menu .item-input {
     padding: 0px 0px 0px 10px;
 }
